@@ -241,7 +241,10 @@ const Home: NextPage = () => {
                 In future, I plan to extend the game to be usable on iOS devices
                 and make the game collaborative (ie. multiplayer).
                 <div className="showcase-link">
-                  <a href="https://collaborative-street-art-sim.herokuapp.com/">
+                  <a
+                    target="_blank"
+                    href="https://collaborative-street-art-sim.herokuapp.com/"
+                  >
                     See the game here
                   </a>
                 </div>
@@ -275,7 +278,10 @@ const Home: NextPage = () => {
                 randomly presents you with funny little messages that politely
                 remind you to stop scrolling.
                 <div className="showcase-link">
-                  <a href="https://addons.mozilla.org/en-US/firefox/addon/stoppingcues-alpha/">
+                  <a
+                    target="_blank"
+                    href="https://addons.mozilla.org/en-US/firefox/addon/stoppingcues-alpha/"
+                  >
                     Try the extension here
                   </a>
                 </div>
@@ -333,7 +339,10 @@ const Home: NextPage = () => {
                 UK newspaper publisher&apos;s followers - throughout the Brexit
                 saga.
                 <div className="showcase-link">
-                  <a href="https://github.com/NoHara42/nohara42.github.io/blob/master/src/assets/BrexitTwitterCrawler_DigitalHumanitiesProject.pdf">
+                  <a
+                    target="_blank"
+                    href="/BrexitTwitterCrawler_DigitalHumanitiesProject.pdf"
+                  >
                     See the paper here
                   </a>
                 </div>
@@ -369,7 +378,10 @@ const Home: NextPage = () => {
                 After that, it returns the top 5 most semantically-similar
                 films.
                 <div className="showcase-link">
-                  <a href="https://nohara42.github.io/ThatOneMovie-Front-End/">
+                  <a
+                    target="_blank"
+                    href="https://nohara42.github.io/ThatOneMovie-Front-End/"
+                  >
                     See the web-app here
                   </a>
                 </div>
@@ -417,13 +429,27 @@ const Home: NextPage = () => {
                 PostgreSQL.
                 <br />
                 <div className="showcase-link">
-                  <a href="ch01.informatik.uni-leipzig.de:5100/bil-explorer/">
+                  <a
+                    target="_blank"
+                    href="ch01.informatik.uni-leipzig.de:5100/bil-explorer/"
+                  >
                     See the full-stack app deployed here
                   </a>
                   <br />
                   <br />
-                  <a href="https://github.com/NoHara42/BachelorThesis">
+                  <a
+                    target="_blank"
+                    href="https://github.com/NoHara42/BachelorThesis"
+                  >
                     See the repository here
+                  </a>
+                  <br />
+                  <br />
+                  <a
+                    target="_blank"
+                    href="/BioDiversityInLiterature-BachelorsThesis.pdf"
+                  >
+                    See the thesis here
                   </a>
                 </div>
               </div>
@@ -465,7 +491,10 @@ const Home: NextPage = () => {
                 the temperature and humidity inside the incubator.
                 <br />
                 <div className="showcase-link">
-                  <a href="https://github.com/fabfarm/fabfarmIncubator/">
+                  <a
+                    target="_blank"
+                    href="https://github.com/fabfarm/fabfarmIncubator/"
+                  >
                     See the open-source project here
                   </a>
                 </div>
@@ -495,6 +524,7 @@ const Home: NextPage = () => {
             className="flex flex-row gap-8 md:flex-col lg:gap-16"
           >
             <a
+              target="_blank"
               href="https://www.linkedin.com/in/ned-o-hara-b5840b127/"
               className="flex items-center gap-4"
             >
@@ -508,6 +538,7 @@ const Home: NextPage = () => {
               <h4 className="hidden md:block">LinkedIn</h4>
             </a>
             <a
+              target="_blank"
               href="https://github.com/nohara42"
               className="flex items-center gap-4"
             >
@@ -521,6 +552,7 @@ const Home: NextPage = () => {
               <h4 className="hidden md:block">GitHub</h4>
             </a>
             <a
+              target="_blank"
               href="mailto:contact@nohara.me"
               className="flex items-center gap-4"
             >
