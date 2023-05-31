@@ -1,8 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import { Box, Cylinder, OrbitControls } from "@react-three/drei";
+import { Box, Cylinder } from "@react-three/drei";
 import * as THREE from "three";
+import { type ReactNode } from "react";
 
-const Rectangle = ({ children }) => {
+const Rectangle = ({ children }: { children: ReactNode }) => {
   return (
     <Box
       rotation={[Math.PI, 0, 0]}

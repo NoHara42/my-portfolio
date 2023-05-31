@@ -1,6 +1,6 @@
 import { Text } from "@react-three/drei";
 import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 type WordProps = {
@@ -47,10 +47,12 @@ function Word({ children, ...props }: WordProps) {
       ref.current.rotation.copy(camera.rotation);
 
       // Animate font color
-      ref.current.material.color.lerp(
-        color.set(hovered ? "#02B284" : "white"),
-        0.1
-      );
+      if ((ref.current.material as THREE.MeshBasicMaterial).color) {
+        (ref.current.material as THREE.MeshBasicMaterial).color.lerp(
+          color.set(hovered ? "#02B284" : "white"),
+          0.1
+        );
+      }
 
       // Animate font scale
       ref.current.scale.lerp(
@@ -67,7 +69,8 @@ function Word({ children, ...props }: WordProps) {
       onPointerOut={out}
       {...props}
       {...fontProps}
-      children={children}
+      // eslint-disable-next-line react/no-children-prop
+      children={children as ReactNode}
     ></Text>
   );
 }
@@ -103,6 +106,7 @@ function Cloud({
   return (
     <group>
       {words.map(([pos, word], index) => (
+        // eslint-disable-next-line react/no-children-prop
         <Word key={index} position={pos} children={word} />
       ))}
     </group>
