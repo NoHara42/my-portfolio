@@ -1,3 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 2 178 132;
+    --secondary: 211 0 237;
+    --tertiary: 255 199 0;
+    --space: 14 22 40;
+  }
+
+  body {
+    @apply overflow-x-hidden bg-space font-sans antialiased;
+  }
+
+  h1 {
+    @apply text-5xl font-black xl:text-7xl;
+  }
+
+  h2 {
+    @apply text-5xl font-extrabold;
+  }
+
+  h3 {
+    @apply text-4xl font-bold;
+  }
+
+  h4 {
+    @apply text-3xl font-semibold;
+  }
+
+  h5 {
+    @apply text-2xl font-medium;
+  }
+
+  h6 {
+    @apply text-xl font-normal;
+  }
+
+  section {
+    @apply radial-space-gradient relative box-content min-h-screen snap-center;
+  }
+
+  ul {
+    @apply mt-4;
+  }
+
+  ul li {
+    @apply text-base;
+  }
+}
+
+@layer components {
+  .radial-space-gradient {
+    background: radial-gradient(ellipse at top, #0f172a 0%, #0e1628 100%);
+  }
+
+  .card {
+    @apply aspect-[4/3] rounded-lg bg-white shadow-lg;
+  }
+
+  .showcase-container {
+    @apply flex w-full flex-col items-center justify-center px-8 pt-32 md:flex-row md:px-16 lg:px-32;
+  }
+
+  .showcase-image {
+    @apply rounded-2xl bg-white shadow-xl;
+  }
+
+  .showcase-gallery-collection {
+    @apply flex aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-xl;
+  }
+
+  .showcase-graphs {
+    @apply flex w-1/3 flex-col justify-between;
+  }
+
+  .showcase-link {
+    @apply mt-5 text-center text-lg text-blue-400 md:text-left;
+  }
+
+  .showcase-text {
+    @apply m-4 ml-12 flex max-w-lg flex-col items-center justify-center text-center text-white md:text-left;
+  }
+
+  .showcase-title {
+    @apply mb-12 mt-12 w-full justify-self-start md:mt-0 md:text-left lg:text-3xl;
+  }
+
+  .showcase-description {
+    @apply text-center md:text-left lg:text-base;
+  }
+}
+
+@layer utilities {
+  @keyframes up-down {
+    0% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(10px);
+    }
+  }
+}
+
+.vertical-timeline.vertical-timeline--two-columns::before {
+  @apply rounded-[999%];
+}
