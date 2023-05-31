@@ -226,6 +226,7 @@ const Home: NextPage = () => {
           <div className="showcase-container">
             <div className="relative aspect-square h-80 lg:h-[25rem]">
               <Image
+                loading="eager"
                 className="showcase-image object-cover"
                 src="/csas1.gif"
                 alt="3D Street-art Simulator Gif"
@@ -262,6 +263,7 @@ const Home: NextPage = () => {
           <div className="showcase-container gap-8">
             <div className="relative 	aspect-[787/524] w-[32rem] md:order-1">
               <Image
+                loading="eager"
                 className="showcase-image"
                 src="/perfect.gif"
                 alt="Stopping Cues Gif"
@@ -361,6 +363,7 @@ const Home: NextPage = () => {
             <div className="relative aspect-square h-96 md:order-1">
               <Image
                 className="showcase-image"
+                loading="eager"
                 src="/ThatOneMovie.gif"
                 alt="That One Movie Dash Screen Picture"
                 fill
