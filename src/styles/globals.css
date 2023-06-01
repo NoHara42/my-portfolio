@@ -79,19 +79,19 @@
   }
 
   .showcase-link {
-    @apply mt-5 text-center text-lg text-blue-400 md:text-left;
+    @apply mt-5 text-lg text-blue-400 md:text-left;
   }
 
   .showcase-text {
-    @apply m-4 ml-12 flex max-w-lg flex-col items-center justify-center text-center text-white md:text-left;
+    @apply m-4 ml-12 flex max-w-lg flex-col items-center justify-center text-white md:text-center;
   }
 
   .showcase-title {
-    @apply mb-12 mt-12 w-full justify-self-start md:mt-0 md:text-left lg:text-3xl;
+    @apply mb-12 w-full justify-self-start md:mt-0 md:text-left lg:text-3xl;
   }
 
   .showcase-description {
-    @apply text-center md:text-left lg:text-base;
+    @apply md:text-left lg:text-base;
   }
 }
 

@@ -98,7 +98,7 @@ const Home: NextPage = () => {
           </motion.div>
         </section>
         <section className="h-[calc(100vh+256px)]">
-          <ThreeGreeting className="-top-64 h-full"></ThreeGreeting>
+          <ThreeGreeting className="-top-64 hidden h-full md:block"></ThreeGreeting>
           <div className="absolute top-0 flex h-full w-full flex-col justify-around">
             <motion.h1
               className="w-full bg-primary bg-gradient-to-tr from-primary to-white  bg-clip-text text-center text-9xl font-bold text-transparent"
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
             Here are some of my hard skills
           </motion.h2>
           <motion.div
-            className="aspect-square w-full text-center text-white md:-my-32 lg:-my-64 lg:px-32 "
+            className="aspect-square w-full text-center text-white md:-my-32 lg:-my-64 lg:px-32"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
@@ -174,7 +174,7 @@ const Home: NextPage = () => {
             Here are some of my soft skills
           </motion.h2>
           <motion.div
-            className="aspect-square w-full px-32 text-white md:-mt-32 lg:-mt-64 lg:px-32"
+            className="aspect-square w-full text-center text-white md:-my-32 lg:-my-64 lg:px-32"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
@@ -205,7 +205,7 @@ const Home: NextPage = () => {
         </section>
         <section>
           <motion.h2
-            className="w-full bg-gradient-to-tr from-primary to-white bg-clip-text px-16 text-center  text-4xl font-semibold text-transparent lg:text-5xl"
+            className="w-full bg-gradient-to-tr from-primary to-white bg-clip-text text-center text-4xl  font-semibold text-transparent md:px-16 lg:text-5xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
@@ -224,7 +224,7 @@ const Home: NextPage = () => {
           className="flex items-center"
         >
           <div className="showcase-container">
-            <div className="relative aspect-square h-80 lg:h-[25rem]">
+            <div className="relative aspect-square min-w-[16rem] md:min-w-[20rem] lg:min-w-[24rem]">
               <Image
                 loading="eager"
                 className="showcase-image object-cover"
@@ -261,7 +261,7 @@ const Home: NextPage = () => {
           }}
         >
           <div className="showcase-container gap-8">
-            <div className="relative 	aspect-[787/524] w-[32rem] md:order-1">
+            <div className="relative aspect-[787/524] min-w-[16rem] md:order-1 md:min-w-[20rem] lg:min-w-[24rem]">
               <Image
                 loading="eager"
                 className="showcase-image"
@@ -360,7 +360,7 @@ const Home: NextPage = () => {
           }}
         >
           <div className="showcase-container">
-            <div className="relative aspect-square h-96 md:order-1">
+            <div className="relative aspect-square min-w-[16rem] md:order-1  md:min-w-[20rem] lg:min-w-[24rem]">
               <Image
                 className="showcase-image"
                 loading="eager"
@@ -476,7 +476,7 @@ const Home: NextPage = () => {
                   fill
                 />
               </div>
-              <div className="relative aspect-[2/1] h-52 lg:h-64 xl:h-72">
+              <div className="relative aspect-[2/1] min-w-[16rem] md:min-w-[20rem] lg:min-w-[24rem]">
                 <Image
                   className="showcase-image"
                   src="/eggIncubator.png"
