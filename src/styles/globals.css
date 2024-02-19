@@ -7,8 +7,8 @@
 @layer base {
   :root {
     --primary: 2 178 132;
-    --secondary: 211 0 237;
-    --tertiary: 255 199 0;
+    --secondary: 255 150 0;
+    --tertiary: 211 0 237;
     --space: 14 22 40;
   }
 

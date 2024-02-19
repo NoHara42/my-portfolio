@@ -1,3 +1,5 @@
+"use client";
+
 import { Text } from "@react-three/drei";
 import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";
 import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
@@ -121,7 +123,7 @@ export default function ThreeSphericalWordCloud({
   rotationDirectionConstant: number;
 }) {
   return (
-    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+    <Canvas camera={{ position: [0, 0, 35], fov: 90 }}>
       <fog attach="fog" args={["#202025", 0, 80]} />
       <Cloud
         radius={14}

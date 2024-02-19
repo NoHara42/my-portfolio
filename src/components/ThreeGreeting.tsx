@@ -1,3 +1,5 @@
+"use client";
+
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useScroll } from "framer-motion";
 import { type MutableRefObject, useRef } from "react";

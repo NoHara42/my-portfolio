@@ -1,3 +1,5 @@
+"use client";
+
 import { Float, Line, Sphere, Trail } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { type MutableRefObject, useMemo, useRef } from "react";
