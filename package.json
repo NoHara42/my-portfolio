@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
-    "@react-three/drei": "^9.97.6",
     "@react-three/fiber": "^8.15.16",
     "@t3-oss/env-nextjs": "^0.2.2",
+    "@tailwindcss/typography": "^0.5.10",
     "@tsparticles/engine": "^3.2.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.2.1",
@@ -31,6 +31,7 @@
     "react-notion-x": "^6.16.0",
     "react-vertical-timeline-component": "^3.6.0",
     "tailwind-merge": "^2.2.1",
+    "tailwind-scrollbar": "^3.1.0",
     "three": "^0.152.2",
     "typewriter-effect": "^2.21.0",
     "zod": "^3.22.4"

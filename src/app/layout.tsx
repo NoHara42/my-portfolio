@@ -13,8 +13,16 @@ const navItems = [
     link: "/",
   },
   {
+    name: "About",
+    link: "/about",
+  },
+  {
     name: "Thoughts",
     link: "/thoughts",
+  },
+  {
+    name: "Projects",
+    link: "/projects",
   },
 ];
 
@@ -24,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="dark" lang="en">
+    <html className="custom-scrollbar dark" lang="en">
       <body>
-        <main className="relative h-screen max-h-none w-screen max-w-none snap-y snap-mandatory antialiased">
+        <main className="custom-scrollbar relative h-screen max-h-none w-screen max-w-none snap-y snap-mandatory antialiased">
           <FloatingNav navItems={navItems} />
           {children}
         </main>

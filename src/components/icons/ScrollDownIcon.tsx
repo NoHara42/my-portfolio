@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { type MutableRefObject, useRef, useState } from "react";
 
 function ScrollDownIcon({ className }: { className: string }) {
@@ -17,7 +17,7 @@ function ScrollDownIcon({ className }: { className: string }) {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
 
   return invertedScrollYProgressValue > 0 ? (
-    <motion.div
+    <div
       ref={ref}
       style={{ opacity: invertedScrollYProgressValue }}
       className={clsx(
@@ -26,7 +26,7 @@ function ScrollDownIcon({ className }: { className: string }) {
       )}
     >
       <div className="h-4 w-4 animate-up-down rounded-full bg-white"></div>
-    </motion.div>
+    </div>
   ) : null;
 }
 

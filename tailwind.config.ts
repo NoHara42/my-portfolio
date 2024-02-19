@@ -37,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar"), require("@tailwindcss/typography")],
 } satisfies Config;
