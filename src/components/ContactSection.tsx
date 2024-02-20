@@ -11,7 +11,7 @@ export default function ContactSection({
   return (
     <section className="flex w-full flex-col items-center justify-around text-white md:flex-row">
       <motion.h1
-        className="bg-primary bg-gradient-to-tr from-primary to-white bg-clip-text p-8 text-center text-transparent md:text-5xl"
+        className="bg-primary bg-gradient-to-tr from-primary to-white bg-clip-text p-4 text-center text-transparent md:text-5xl lg:p-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{

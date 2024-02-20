@@ -104,7 +104,7 @@ export default function HomePage() {
           </motion.h1>
         </div>
       </section>
-      <section className="flex min-h-0 flex-col items-center justify-center gap-2 lg:flex-row lg:gap-8">
+      <section className="flex min-h-0 flex-col items-center justify-center gap-2 p-4 lg:flex-row lg:gap-8">
         <CardContainer containerClassName="py-4 lg:py-20">
           <CardBody className="group/card relative h-auto  w-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 dark:border-white/[0.2] dark:bg-primary/5 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] sm:w-[30rem]  ">
             <CardItem

@@ -1,7 +1,7 @@
 "use client";
 
 //TODO: this causes window error
-import { Text } from "@react-three/drei";
+// import { Text } from "@react-three/drei";
 import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";
 import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";

@@ -12,7 +12,7 @@ export default function AboutPage() {
       className="w-full"
       topNavLinkElement={<HomeIcon className="h-6"></HomeIcon>}
     >
-      <motion.section className="prose prose-invert min-h-0">
+      <motion.section className="prose prose-invert m-8 min-h-0">
         <p>
           Personally, I like to make music, cook, travel, and write about how my
           perception of the world is changing. I&apos;m a part of the

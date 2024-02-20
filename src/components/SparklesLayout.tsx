@@ -32,7 +32,7 @@ export default function SparklesLayout({
         <h2 className="relative z-20 mb-2 mt-16 text-center text-4xl font-bold text-white sm:text-5xl md:text-7xl lg:text-8xl">
           {title}
         </h2>
-        <div className="relative h-40 w-[40rem] lg:mb-8">
+        <div className="relative h-40 w-[40rem] scale-50 md:scale-75 lg:mb-8 lg:scale-100">
           {/* Gradients */}
           <div className="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
           <div className="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
@@ -45,7 +45,7 @@ export default function SparklesLayout({
             minSize={0.4}
             maxSize={1}
             particleDensity={150}
-            className="h-full w-full"
+            className="hidden h-full w-full lg:block"
             particleColor="#FFFFFF"
           />
 

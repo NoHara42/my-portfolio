@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html className="custom-scrollbar dark" lang="en">
       <body>
-        <main className="custom-scrollbar relative h-screen max-h-none w-screen max-w-none snap-y snap-mandatory antialiased">
+        <main className="relative h-screen max-h-none w-screen max-w-none snap-y snap-mandatory antialiased">
           <FloatingNav navItems={navItems} />
           {children}
         </main>
