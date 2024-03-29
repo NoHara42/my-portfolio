@@ -13,19 +13,21 @@ export default async function ThoughtsPage() {
       title="Thoughts"
       topNavLinkElement={<HomeIcon className="h-6"></HomeIcon>}
     >
-      {allPosts.map((post) => (
-        <>
-          <Link
-            className="w-full text-left text-white"
-            href={"/thoughts/" + post.slug}
-          >
-            <h5 key={post.id}>{post.title}</h5>
-            <p className="w-full text-left text-white">{post.date}</p>
-          </Link>
-          <br />
-          <br />
-        </>
-      ))}
+      {allPosts
+        ?.filter((post) => post.published)
+        .map((post) => (
+          <>
+            <Link
+              className="w-full text-left text-white"
+              href={"/thoughts/" + post.slug}
+            >
+              <h5 key={post.id}>{post.title}</h5>
+              <p className="w-full text-left text-white">{post.date}</p>
+            </Link>
+            <br />
+            <br />
+          </>
+        ))}
     </SparklesLayout>
   );
 }
