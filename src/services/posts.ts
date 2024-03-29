@@ -53,8 +53,10 @@ export async function getAllPostsFromNotion() {
         const categories =
           properties[propertyMap["Category"]]?.[0]?.[0]?.split(",");
         const cover = properties[propertyMap["Cover"]]?.[0]?.[1]?.[0]?.[1];
-        const date = properties[propertyMap["Date"]][0][1][0][1]["start_date"];
-        const published = properties[propertyMap["Published"]][0][0] === "Yes";
+        const date =
+          properties[propertyMap["Date"]]?.[0]?.[1]?.[0]?.[1]?.["start_date"];
+        const published =
+          properties[propertyMap["Published"]]?.[0]?.[0] === "Yes";
 
         allPosts.push({
           id,
