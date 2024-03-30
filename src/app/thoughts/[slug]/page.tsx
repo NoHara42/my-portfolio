@@ -20,7 +20,7 @@ export default async function PostPage({
 }) {
   const allPosts = await getAllPostsFromNotion();
 
-  const post = allPosts.find((p) => p.slug === slug);
+  const post = allPosts?.find((p) => p.slug === slug);
   if (!post) {
     return notFound();
   }
