@@ -11,7 +11,7 @@ import "prismjs/themes/prism-solarizedlight.css";
 import "react-notion-x/src/styles.css";
 import ContactSection from "~/components/ContactSection";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // revalidate at most every min
 
 export default async function PostPage({
   params: { slug },

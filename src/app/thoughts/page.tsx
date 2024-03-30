@@ -3,7 +3,7 @@ import Link from "next/link";
 import SparklesLayout from "~/components/SparklesLayout";
 import { getAllPostsFromNotion } from "~/services/posts";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // revalidate at most every min
 
 export default async function ThoughtsPage() {
   const allPosts = await getAllPostsFromNotion();
