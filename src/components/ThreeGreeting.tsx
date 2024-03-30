@@ -20,8 +20,8 @@ function Stars() {
   const { scrollYProgress } = useScroll();
 
   useFrame(() => {
-    ref.current.rotation.x = scrollYProgress.get() * 10;
-    ref.current.rotation.y = scrollYProgress.get() * 10;
+    ref.current.rotation.x = scrollYProgress.get() * 2;
+    ref.current.rotation.y = scrollYProgress.get() * 2;
   });
 
   return (
