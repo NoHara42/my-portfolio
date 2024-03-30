@@ -72,7 +72,7 @@ export default async function PostPage({
 export async function generateStaticParams() {
   const allPosts = await getAllPostsFromNotion();
 
-  return allPosts.map((post) => ({
+  return allPosts?.map((post) => ({
     slug: post.slug,
   }));
 }
@@ -83,7 +83,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const allPosts = await getAllPostsFromNotion();
-  const post = allPosts.find((p) => p.slug === slug);
+  const post = allPosts?.find((p) => p.slug === slug);
 
   return post
     ? {
