@@ -4,7 +4,7 @@ import "~/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Ned O'Hara",
-  description: "A portfolio built using nextjs",
+  description: "A personal portfolio",
 };
 
 const navItems = [
