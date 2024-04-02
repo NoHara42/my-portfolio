@@ -75,6 +75,6 @@ export async function getAllPostsFromNotion() {
 
     return allPosts;
   } catch (err) {
-    console.error("Error fetching posts from Notion", err);
+    throw new Error("Error fetching posts from Notion: " + String(err));
   }
 }

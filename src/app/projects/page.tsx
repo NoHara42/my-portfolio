@@ -14,14 +14,14 @@ export default function ProjectsPage() {
       title="Projects"
       topNavLinkElement={<HomeIcon className="h-6"></HomeIcon>}
     >
-      <ScrollDownIcon className="scale-50 opacity-80"></ScrollDownIcon>
+      <ScrollDownIcon className="fixed bottom-0 z-50 mb-32 scale-50 opacity-80"></ScrollDownIcon>
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
           duration: 1,
         }}
-        className="showcase-container flex items-center"
+        className="showcase-container mt-64 flex items-center"
       >
         <div className="relative aspect-square min-w-[16rem] md:min-w-[20rem] lg:min-w-[24rem]">
           <Image

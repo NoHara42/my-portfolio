@@ -6,6 +6,9 @@ const notion = new NotionAPI({
 });
 
 export function getRecordMap(id: string) {
+  if (id === undefined) {
+    throw new Error("No id found while getting record map");
+  }
   return notion.getPage(id);
 }
 
@@ -39,8 +42,8 @@ export function mapImageUrl(url: string, block: Block): string | null {
         return url;
       }
     }
-  } catch {
-    // ignore invalid urls
+  } catch (err) {
+    throw new Error("Failed to parse URL");
   }
 
   if (url.startsWith("/images")) {
