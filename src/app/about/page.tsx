@@ -14,19 +14,19 @@ export default function AboutPage() {
     >
       <motion.section className="prose prose-invert m-8 min-h-0">
         <p>
-          Personally, I like to make music, cook, travel, and write about how my
-          perception of the world is changing. I&apos;m a part of the
-          regenerative movement, and I&apos;m writing about regeneration as an
-          antidote to weltschmerz. <br />
-          (A German word that translates to &apos;world pain&apos;.)
-        </p>
-        <p>
           I grew up in London for most of my life, and moved to Germany to study
           when I turned 18. Since finishing my degree in Leipzig, I&apos;ve fled
           city-life and have been travelling to explore different kinds of
           communities around the world. My dream is to found a community of my
           own, distilled with all the impressions of all of the communities I
           have taken part in creating.
+        </p>
+        <p>
+          Personally, I like to make music, cook, travel, and write about how my
+          perception of the world is changing. I&apos;m a part of the
+          regenerative movement, and I&apos;m writing about regeneration as an
+          antidote to weltschmerz. <br />
+          (A German word that translates to &apos;world pain&apos;.)
         </p>
         <p>
           Professionally, I&apos;m a full-stack developer with a B.Sc degree in
