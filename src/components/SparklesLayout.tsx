@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { SparklesCore } from "~/components/Sparkles";
 import { cn } from "~/utils/cn";
 
@@ -10,12 +11,33 @@ interface SparklesLayoutProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
+export const useDeviceSize = () => {
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  };
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
+  return [width, height];
+};
+
 export default function SparklesLayout({
   children,
   title,
   topNavLinkElement,
   className,
 }: SparklesLayoutProps) {
+  const [width] = useDeviceSize();
   return (
     <div className="flex h-screen w-screen flex-col items-center">
       <div
@@ -45,8 +67,8 @@ export default function SparklesLayout({
             background="transparent"
             minSize={0.4}
             maxSize={1}
-            speed={window.innerWidth < 640 ? 1 : 2}
-            particleDensity={window.innerWidth < 640 ? 50 : 150}
+            speed={width! < 640 ? 1 : 2}
+            particleDensity={width! < 640 ? 50 : 150}
             className="h-full w-full"
             particleColor="#FFFFFF"
           />
