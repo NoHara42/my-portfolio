@@ -17,10 +17,12 @@ export default function ThoughtsError({
   return (
     <div>
       <div className="mx-auto mt-40 text-center text-white">
-        <h2 className="mb-4 text-3xl font-bold">Something went wrong...</h2>
-        <Link href="/thoughts">
+        <h2 className="mb-4 text-3xl font-bold">
+          Something went wrong... Try again later.
+        </h2>
+        <Link href="/">
           <span className="mr-2">&larr;</span>
-          <span>Back to thoughts</span>
+          <span>Back to home...</span>
         </Link>
       </div>
     </div>

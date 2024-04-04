@@ -35,3 +35,11 @@
 .notion-red {
   @apply text-secondary;
 }
+
+.notion-title {
+  @apply mb-16;
+}
+
+.notion-text {
+  @apply text-prose;
+}

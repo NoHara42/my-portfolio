@@ -26,9 +26,12 @@ export default function NotionPage({
       showTableOfContents
       disableHeader
       pageHeader={
-        <div className="mb-4">
-          <CategoryList categories={post.categories} />
-        </div>
+        post.categories.length > 0 &&
+        post.categories.every((val) => val !== "") ? (
+          <div className="mb-4">
+            <CategoryList categories={post.categories} />
+          </div>
+        ) : null
       }
       mapImageUrl={(url, block) => mapImageUrl(url, block) || ""}
       components={{

@@ -90,7 +90,7 @@ export default function HomePage() {
         <ThreeGreeting className="-top-64 hidden h-full md:block"></ThreeGreeting>
         <div className="absolute top-0 flex h-full w-full flex-col justify-around">
           <motion.h1
-            className="w-full bg-primary bg-gradient-to-tr from-primary to-white  bg-clip-text text-center text-9xl font-bold text-transparent"
+            className="w-full bg-primary bg-gradient-to-tr from-primary to-white  bg-clip-text text-center text-7xl font-bold text-transparent md:text-8xl lg:text-9xl"
             initial={{ scale: 0, rotate: 180 }}
             whileInView={{ rotate: 0, scale: 1 }}
             transition={{
@@ -104,8 +104,8 @@ export default function HomePage() {
           </motion.h1>
         </div>
       </section>
-      <section className="flex min-h-0 flex-col items-center justify-center gap-2 p-4 lg:flex-row lg:gap-8">
-        <CardContainer containerClassName="py-4 lg:py-20">
+      <section className="flex min-h-0 flex-col flex-wrap items-center justify-center gap-2 p-4 lg:flex-row lg:gap-8">
+        <CardContainer containerClassName="py-4">
           <CardBody className="group/card relative h-auto  w-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 dark:border-white/[0.2] dark:bg-primary/5 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] sm:w-[30rem]  ">
             <CardItem
               translateZ="70"
@@ -131,7 +131,7 @@ export default function HomePage() {
             </div>
           </CardBody>
         </CardContainer>
-        <CardContainer containerClassName="py-4 lg:py-20">
+        <CardContainer containerClassName="py-4">
           <CardBody className="group/card relative h-auto  w-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 dark:border-white/[0.2] dark:bg-primary/5 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] sm:w-[30rem]  ">
             <CardItem
               translateZ="70"
@@ -157,7 +157,7 @@ export default function HomePage() {
             </div>
           </CardBody>
         </CardContainer>
-        <CardContainer containerClassName="py-4 lg:py-20">
+        <CardContainer containerClassName="py-4">
           <CardBody className="group/card relative h-auto  w-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 dark:border-white/[0.2] dark:bg-primary/5 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] sm:w-[30rem]  ">
             <CardItem
               translateZ="70"

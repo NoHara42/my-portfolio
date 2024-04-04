@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { SparklesCore } from "~/components/Sparkles";
 import { cn } from "~/utils/cn";
@@ -22,17 +23,17 @@ export default function SparklesLayout({
           Boolean(className)
             ? className
             : "3xl:max-w-3xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl",
-          "mt-32 flex flex-col items-center rounded-md "
+          "flex flex-col items-center rounded-md "
         )}
       >
         <Link href="/" className="mt-20 inline-flex pr-6 text-white">
           <span className="mr-2">&larr;</span>
           {topNavLinkElement}
         </Link>
-        <h2 className="relative z-20 mb-2 mt-16 text-center text-4xl font-bold text-white sm:text-5xl md:text-7xl lg:text-8xl">
+        <h2 className="relative top-10 z-20 mb-2 mt-16 text-center text-4xl font-bold text-white sm:text-5xl md:top-5 md:text-7xl lg:top-0 lg:text-8xl">
           {title}
         </h2>
-        <div className="relative h-40 w-[40rem] lg:mb-8">
+        <div className="relative h-40 w-[40rem] scale-50 md:scale-75 lg:mb-8 lg:scale-100">
           {/* Gradients */}
           <div className="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
           <div className="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
@@ -44,7 +45,8 @@ export default function SparklesLayout({
             background="transparent"
             minSize={0.4}
             maxSize={1}
-            particleDensity={150}
+            speed={window.innerWidth < 640 ? 1 : 2}
+            particleDensity={window.innerWidth < 640 ? 50 : 150}
             className="h-full w-full"
             particleColor="#FFFFFF"
           />

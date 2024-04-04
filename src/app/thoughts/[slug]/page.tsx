@@ -48,7 +48,7 @@ export default async function PostPage({
         data-revalidated-at={new Date().getTime()}
         className="mt-4 flex flex-col items-center md:mt-20"
       >
-        <Link href="/thoughts" className="text-white">
+        <Link href="/thoughts" className="mb-8 text-white">
           <span className="mr-2">&larr;</span>
           <span>Back to thoughts</span>
         </Link>

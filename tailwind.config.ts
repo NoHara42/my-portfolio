@@ -11,6 +11,7 @@ export default {
         secondary: "rgb(var(--secondary)/<alpha-value>)",
         tertiary: "rgb(var(--tertiary)/<alpha-value>)",
         space: "rgb(var(--space)/<alpha-value>)",
+        prose: "rgb(var(--tw-prose-body)/<alpha-value>)",
       },
       fontFamily: {
         sans: ["Maven Pro", ...defaultTheme.fontFamily.sans],
