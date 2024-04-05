@@ -50,6 +50,8 @@ export async function getAllPostsFromNotion() {
         const id = pageId;
         const slug = properties[propertyMap["Slug"]]?.[0]?.[0];
         const title = properties[propertyMap["Page"]]?.[0]?.[0];
+
+        //TODO: type properties and propertyMap later
         const categories =
           properties[propertyMap["Category"]]?.[0]?.[0]?.split(",");
         const cover = properties[propertyMap["Cover"]]?.[0]?.[1]?.[0]?.[1];

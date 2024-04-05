@@ -18,16 +18,13 @@ export default async function ThoughtsPage() {
         .map((post) => (
           <>
             <Link
-              className="w-full px-20 text-left text-white"
+              key={post.id}
+              className="w-full px-20 text-left"
               href={"/thoughts/" + post.slug}
             >
-              <h6 className="block md:hidden" key={post.id}>
-                {post.title}
-              </h6>
-              <h5 className="hidden md:block" key={post.id}>
-                {post.title}
-              </h5>
-              <p className="w-full text-left text-white">{post.date}</p>
+              <h6 className="block text-gray-200 md:hidden">{post.title}</h6>
+              <h5 className="hidden text-gray-200 md:block">{post.title}</h5>
+              <p className="w-full text-gray-400">{post.date}</p>
             </Link>
             <br />
             <br />
