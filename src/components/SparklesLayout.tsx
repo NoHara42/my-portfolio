@@ -16,11 +16,14 @@ export const useDeviceSize = () => {
   const [height, setHeight] = useState(0);
 
   const handleWindowResize = () => {
+    if (!window) return;
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
   };
 
   useEffect(() => {
+    if (!window) return;
+
     // component is mounted and window is available
     handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
