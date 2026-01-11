@@ -17,10 +17,6 @@ const navItems = [
     link: "/about",
   },
   {
-    name: "Thoughts",
-    link: "/thoughts",
-  },
-  {
     name: "Projects",
     link: "/projects",
   },

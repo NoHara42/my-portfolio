@@ -63,7 +63,7 @@
   }
 
   .showcase-container {
-    @apply flex w-full flex-col items-center justify-center px-8 pt-4 md:flex-row md:px-16 lg:px-32 lg:pt-32;
+    @apply flex w-full flex-col items-center justify-center mx-auto pt-4 md:flex-row lg:pt-32;
   }
 
   .showcase-image {
@@ -108,6 +108,14 @@
     100% {
       transform: translateY(10px);
     }
+  }
+
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-\[1000px\] {
+    perspective: 1000px;
   }
 }
 

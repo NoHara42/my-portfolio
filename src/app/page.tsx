@@ -15,10 +15,10 @@ export default function HomePage() {
       <section className="bg-gradient-to-b from-transparent to-slate-900">
         <Image
           alt="An image of the northern lights"
-          src="/northern-lights-3273425.jpg"
+          src="/northern-lights-3273425.webp"
           fill
           sizes="100vw"
-          quality={50}
+          quality={100}
           draggable={false}
           priority
           className="fixed z-[-1] h-screen w-screen object-cover"
@@ -41,7 +41,7 @@ export default function HomePage() {
               priority
               quality={100}
               className="aspect-square rounded-full object-cover"
-              src="/resizedprofilepicture.jpg"
+              src="/resizedprofilepicture.webp"
             ></Image>
           </motion.div>
           <motion.div

@@ -6,8 +6,47 @@ import Image from "next/image";
 import ContactSection from "~/components/ContactSection";
 import SparklesLayout from "~/components/SparklesLayout";
 import ScrollDownIcon from "~/components/icons/ScrollDownIcon";
+import { HeroParallax } from "~/components/hero-parallax";
 
 export default function ProjectsPage() {
+  const products = [
+    {
+      title: "Community Platform",
+      link: "https://www.onearmy.earth",
+      thumbnail: "/screenshots/community-platform.webp",
+    },
+    {
+      title: "Flowplace",
+      link: "https://www.flowplace.com/",
+      thumbnail: "/screenshots/flowplace.webp",
+    },
+    {
+      title: "Gleichstellung SH",
+      link: "https://gleichstellung-sh.de/",
+      thumbnail: "/screenshots/gleichstellung-sh.webp",
+    },
+    {
+      title: "L-DE",
+      link: "https://l.de/",
+      thumbnail: "/screenshots/l-de.webp",
+    },
+    {
+      title: "Portfolio",
+      link: "http://nohara.me/",
+      thumbnail: "/screenshots/portfolio.webp",
+    },
+    {
+      title: "R3Leaf",
+      link: "http://r3leaf.earth/",
+      thumbnail: "/screenshots/r3leaf.webp",
+    },
+    {
+      title: "Val Mici",
+      link: "https://www.valentinmici.com/",
+      thumbnail: "/screenshots/val-mici.webp",
+    },
+  ];
+
   return (
     <SparklesLayout
       className="w-full"
@@ -15,19 +54,37 @@ export default function ProjectsPage() {
       topNavLinkElement={<HomeIcon className="h-6"></HomeIcon>}
     >
       <ScrollDownIcon className="fixed bottom-0 z-50 mb-32 scale-50 opacity-80"></ScrollDownIcon>
+      
+      <HeroParallax products={products} />
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mt-32 md:mt-96 text-center px-4"
+      >
+        <h2 className="text-3xl font-bold text-white md:text-5xl">
+          Passion Projects & Experiments
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
+          Beyond client work, I love exploring new technologies and building creative experiments. 
+          Here are some of my personal projects and open-source contributions.
+        </p>
+      </motion.div>
+
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
           duration: 1,
         }}
-        className="showcase-container mt-64 flex items-center"
+        className="showcase-container mt-32 flex items-center"
       >
         <div className="relative aspect-square min-w-[16rem] md:min-w-[20rem] lg:min-w-[24rem]">
           <Image
             loading="eager"
             className="showcase-image object-cover"
-            src="/csas1.gif"
+            src="/csas1.webp"
             alt="3D Street-art Simulator Gif"
             fill
           />
@@ -63,7 +120,7 @@ export default function ProjectsPage() {
           <Image
             loading="eager"
             className="showcase-image"
-            src="/perfect.gif"
+            src="/perfect.webp"
             alt="Stopping Cues Gif"
             fill
           />
@@ -99,7 +156,7 @@ export default function ProjectsPage() {
         <div className="showcase-gallery-collection max-w-lg">
           <div className="relative aspect-[3/4] w-full">
             <Image
-              src="/idhPage1.png"
+              src="/idhPage1.webp"
               alt="Digital Humanities paper image"
               fill
             />
@@ -107,7 +164,7 @@ export default function ProjectsPage() {
           <div className="showcase-graphs">
             <div className="relative aspect-[3/4]">
               <Image
-                src="/idhPage8.png"
+                src="/idhPage8.webp"
                 alt="Digital Humanities paper image"
                 fill
               />
@@ -115,7 +172,7 @@ export default function ProjectsPage() {
             <div className="showcase-whitespace"></div>
             <div className="relative aspect-[7/6]">
               <Image
-                src="/bias_hashtags_count_piechart.png"
+                src="/bias_hashtags_count_piechart.webp"
                 alt="Digital Humanities paper image"
                 fill
               />
@@ -123,7 +180,7 @@ export default function ProjectsPage() {
             <div className="showcase-whitespace"></div>
             <div className="relative aspect-[4/3]">
               <Image
-                src="/newspaper_sentiments_linechart.png"
+                src="/newspaper_sentiments_linechart.webp"
                 alt="Digital Humanities paper image"
                 fill
               />
@@ -159,7 +216,7 @@ export default function ProjectsPage() {
           <Image
             className="showcase-image"
             loading="eager"
-            src="/ThatOneMovie.gif"
+            src="/ThatOneMovie.webp"
             alt="That One Movie Dash Screen Picture"
             fill
           />
@@ -197,7 +254,7 @@ export default function ProjectsPage() {
           <div className="relative aspect-[2/1] h-40 lg:h-52 xl:h-64">
             <Image
               className="showcase-image"
-              src="/GraphBIL.png"
+              src="/GraphBIL.webp"
               alt="The graph view of my bachelor thesis"
               fill
             />
@@ -205,7 +262,7 @@ export default function ProjectsPage() {
           <div className="relative aspect-[2/1] h-40 lg:h-52 xl:h-64">
             <Image
               className="showcase-image"
-              src="/MetadataBIL.png"
+              src="/MetadataBIL.webp"
               alt="The metadata view of my bachelor thesis"
               fill
             />
@@ -262,7 +319,7 @@ export default function ProjectsPage() {
           <div className="relative aspect-[10/9] w-52 lg:w-64 xl:w-72">
             <Image
               className="showcase-image"
-              src="/prototype.jpg"
+              src="/prototype.webp"
               alt="Egg Incubator Prototype Picture"
               fill
             />
@@ -270,7 +327,7 @@ export default function ProjectsPage() {
           <div className="relative aspect-[2/1] min-w-[16rem] md:min-w-[20rem] lg:min-w-[24rem]">
             <Image
               className="showcase-image"
-              src="/eggIncubator.png"
+              src="/eggIncubator.webp"
               alt="Egg Incubator Dashboard Picture"
               fill
             />
