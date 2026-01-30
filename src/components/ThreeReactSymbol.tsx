@@ -5,13 +5,17 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { type MutableRefObject, useMemo, useRef } from "react";
 import * as THREE from "three";
 
+import { SafeWebGLWrapper } from "./SafeWebGLWrapper";
+
 export default function ThreeReactSymbol() {
   return (
-    <Canvas camera={{ position: [0, 0, 10] }}>
-      <Float speed={4} rotationIntensity={1} floatIntensity={2}>
-        <Atom />
-      </Float>
-    </Canvas>
+    <SafeWebGLWrapper>
+      <Canvas camera={{ position: [0, 0, 10] }}>
+        <Float speed={4} rotationIntensity={1} floatIntensity={2}>
+          <Atom />
+        </Float>
+      </Canvas>
+    </SafeWebGLWrapper>
   );
 }
 

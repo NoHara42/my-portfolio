@@ -116,6 +116,8 @@ function Cloud({
   );
 }
 
+import { SafeWebGLWrapper } from "./SafeWebGLWrapper";
+
 export default function ThreeSphericalWordCloud({
   wordArr,
   rotationDirectionConstant,
@@ -124,13 +126,15 @@ export default function ThreeSphericalWordCloud({
   rotationDirectionConstant: number;
 }) {
   return (
-    <Canvas camera={{ position: [0, 0, 35], fov: 90 }}>
-      <fog attach="fog" args={["#202025", 0, 80]} />
-      <Cloud
-        radius={14}
-        rotationDirectionConstant={rotationDirectionConstant}
-        wordArr={wordArr}
-      />
-    </Canvas>
+    <SafeWebGLWrapper>
+      <Canvas camera={{ position: [0, 0, 35], fov: 90 }}>
+        <fog attach="fog" args={["#202025", 0, 80]} />
+        <Cloud
+          radius={14}
+          rotationDirectionConstant={rotationDirectionConstant}
+          wordArr={wordArr}
+        />
+      </Canvas>
+    </SafeWebGLWrapper>
   );
 }

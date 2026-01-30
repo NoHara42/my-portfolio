@@ -6,12 +6,16 @@ import { type MutableRefObject, useRef } from "react";
 import * as THREE from "three";
 import type { Group } from "three";
 
+import { SafeWebGLWrapper } from "./SafeWebGLWrapper";
+
 function ThreeGreeting({ className }: { className: string }) {
   return (
-    <Canvas className={className} camera={{ position: [0, 0, 1] }}>
-      <ambientLight intensity={0.2} />
-      <Stars />
-    </Canvas>
+    <SafeWebGLWrapper>
+      <Canvas className={className} camera={{ position: [0, 0, 1] }}>
+        <ambientLight intensity={0.2} />
+        <Stars />
+      </Canvas>
+    </SafeWebGLWrapper>
   );
 }
 

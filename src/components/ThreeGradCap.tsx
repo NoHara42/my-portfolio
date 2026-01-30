@@ -27,14 +27,21 @@ const Cap1 = () => {
   );
 };
 
+// ... imports
+import { SafeWebGLWrapper } from "./SafeWebGLWrapper";
+
+// ... Rectangle and Cap1 components
+
 export default function ThreeGradCap() {
   return (
-    <Canvas camera={{ position: [0, 1, 6] }}>
-      <ambientLight intensity={1} />
-      <pointLight intensity={3.5} position={[10, 10, 10]} />
-      <Rectangle>
-        <Cap1 />
-      </Rectangle>
-    </Canvas>
+    <SafeWebGLWrapper>
+      <Canvas camera={{ position: [0, 1, 6] }}>
+        <ambientLight intensity={1} />
+        <pointLight intensity={3.5} position={[10, 10, 10]} />
+        <Rectangle>
+          <Cap1 />
+        </Rectangle>
+      </Canvas>
+    </SafeWebGLWrapper>
   );
 }
