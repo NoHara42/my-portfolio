@@ -6,10 +6,30 @@ export async function getAllPostsFromNotion() {
     const allPosts: Post[] = [];
     const recordMap = await getRecordMap(process.env.NOTION_DATABASE_ID!);
     const { block, collection } = recordMap;
-    const schema = Object.values(collection)[0]?.value.schema;
+
+    // Debug: Check what we're getting from Notion
+    if (!collection || Object.keys(collection).length === 0) {
+      console.error("Notion recordMap collection is empty. Keys in recordMap:", Object.keys(recordMap));
+      console.error("Block count:", block ? Object.keys(block).length : 0);
+      throw new Error(
+        `No collection data returned from Notion. This usually means the NOTION_AUTH_TOKEN (token_v2 cookie) has expired or the database ID is incorrect. ` +
+        `RecordMap keys: ${Object.keys(recordMap).join(", ")}`
+      );
+    }
+
+    // notion-client returns collection with structure: { [id]: { value: { value: {..., schema}, role } } }
+    // The schema may be at .value.schema or .value.value.schema depending on the response
+    const collectionEntry = Object.values(collection)[0]?.value;
+    const schema = collectionEntry?.schema ?? collectionEntry?.value?.schema;
     const propertyMap: Record<string, string> = {};
 
-    if (!schema) throw new Error("No schema found in Notion database.");
+    if (!schema) {
+      console.error("Collection entry:", JSON.stringify(collectionEntry, null, 2));
+      throw new Error(
+        `No schema found in Notion collection. ` +
+        `This may indicate the database structure changed.`
+      );
+    }
 
     Object.keys(schema).forEach((key) => {
       propertyMap[schema[key]!.name] = key;
