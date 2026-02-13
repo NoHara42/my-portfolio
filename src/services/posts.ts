@@ -7,59 +7,60 @@ export async function getAllPostsFromNotion() {
     const recordMap = await getRecordMap(process.env.NOTION_DATABASE_ID!);
     const { block, collection } = recordMap;
 
-    // Debug: Check what we're getting from Notion
     if (!collection || Object.keys(collection).length === 0) {
-      console.error("Notion recordMap collection is empty. Keys in recordMap:", Object.keys(recordMap));
-      console.error("Block count:", block ? Object.keys(block).length : 0);
       throw new Error(
-        `No collection data returned from Notion. This usually means the NOTION_AUTH_TOKEN (token_v2 cookie) has expired or the database ID is incorrect. ` +
-        `RecordMap keys: ${Object.keys(recordMap).join(", ")}`
+        "No collection data returned from Notion. The NOTION_AUTH_TOKEN may have expired or the database ID is incorrect."
       );
     }
 
-    // notion-client returns collection with structure: { [id]: { value: { value: {..., schema}, role } } }
-    // The schema may be at .value.schema or .value.value.schema depending on the response
-    const collectionEntry = Object.values(collection)[0]?.value;
-    const schema = collectionEntry?.schema ?? collectionEntry?.value?.schema;
+    // notion-client may return double-nested values: { value: { value: T } }
+    // Unwrap to get the actual Collection object
+    const rawCollectionEntry = Object.values(collection)[0]?.value;
+    const collectionValue =
+      rawCollectionEntry?.schema != null
+        ? rawCollectionEntry
+        : rawCollectionEntry?.value;
+    const schema = collectionValue?.schema;
     const propertyMap: Record<string, string> = {};
 
-    if (!schema) {
-      console.error("Collection entry:", JSON.stringify(collectionEntry, null, 2));
-      throw new Error(
-        `No schema found in Notion collection. ` +
-        `This may indicate the database structure changed.`
-      );
-    }
+    if (!schema) throw new Error("No schema found in Notion database.");
 
     Object.keys(schema).forEach((key) => {
       propertyMap[schema[key]!.name] = key;
     });
 
+    // Detect double-nested block values (same notion-client issue)
+    const sampleBlockEntry = Object.values(block)[0];
+    const blocksAreDoubleNested =
+      sampleBlockEntry?.value?.value?.id != null &&
+      sampleBlockEntry?.value?.type == null;
+
     Object.keys(block).forEach((pageId) => {
+      const blockValue = blocksAreDoubleNested
+        ? block[pageId]?.value?.value
+        : block[pageId]?.value;
+
       if (
         propertyMap["Slug"] &&
-        block[pageId]?.value.type === "page" &&
-        (block[pageId]?.value?.properties as Record<string, string>)?.[
+        blockValue?.type === "page" &&
+        (blockValue?.properties as Record<string, string>)?.[
           propertyMap["Slug"]
         ]
       ) {
-        const blockValue = block?.[pageId]?.value as {
+        const { properties, last_edited_time } = blockValue as {
           properties: Record<string, string>;
           last_edited_time: number;
         };
 
-        if (!blockValue) {
-          throw new Error(`Block value is undefined for pageId: ${pageId}`);
-        }
-
-        const { properties, last_edited_time } = blockValue;
-
-        const contents = block[pageId]?.value.content || [];
-        const dates = contents.map((content) => {
-          return block[content]?.value?.last_edited_time;
+        const contents = blockValue.content || [];
+        const dates = contents.map((content: string) => {
+          const contentBlock = blocksAreDoubleNested
+            ? block[content]?.value?.value
+            : block[content]?.value;
+          return contentBlock?.last_edited_time;
         });
         dates.push(last_edited_time);
-        dates.sort((a, b) => Number(b) - Number(a));
+        dates.sort((a: number, b: number) => Number(b) - Number(a));
         const lastEditedAt = dates[0];
 
         if (!propertyMap["Page"] || !propertyMap["Date"])
@@ -87,7 +88,7 @@ export async function getAllPostsFromNotion() {
           categories,
           // Fix 403 error for images.
           // https://github.com/NotionX/react-notion-x/issues/211
-          cover: mapImageUrl(cover, block[pageId].value) || "",
+          cover: mapImageUrl(cover, blockValue) || "",
           date,
           published,
           lastEditedAt,

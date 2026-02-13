@@ -20,6 +20,9 @@ next-env.d.ts
 # production
 /build
 
+**.log
+.playwright-mcp/*
+
 # misc
 .DS_Store
 *.pem
