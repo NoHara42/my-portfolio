@@ -21,7 +21,7 @@ export default function HomePage() {
           quality={100}
           draggable={false}
           priority
-          className="fixed z-[-1] h-screen w-screen object-cover"
+          className="fixed z-[-1] h-screen w-screen object-cover blur-[2px]"
         ></Image>
         <div className="flex min-h-screen flex-col items-center justify-center gap-16 md:flex-row xl:gap-24 ">
           <motion.div
@@ -36,13 +36,14 @@ export default function HomePage() {
             <Image
               alt="A picture of me"
               sizes="33vw"
-              fill
+              width={320}
+              height={320}
               draggable={false}
               priority
               quality={100}
               className="aspect-square rounded-full object-cover"
-              src="/resizedprofilepicture.webp"
-            ></Image>
+              src="/image.png"
+            />
           </motion.div>
           <motion.div
             className="flex flex-col gap-4 text-center"
